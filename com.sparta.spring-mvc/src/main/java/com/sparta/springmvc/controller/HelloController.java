@@ -1,4 +1,4 @@
-package com.sparta.spring_mvc.controller;
+package com.sparta.springmvc.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;

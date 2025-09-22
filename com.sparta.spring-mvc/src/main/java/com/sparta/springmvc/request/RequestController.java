@@ -47,7 +47,7 @@ public class RequestController {
         return String.format("Hello, @ModelAttribute.<br> (name = %s, age = %d) ", star.name, star.age);
     }
 
-    // [Request sample]
+    // [Request sample] 
     // GET http://localhost:8080/hello/request/form/param/model?name=Robbie&age=95
     @GetMapping("/form/param/model")
     public String helloRequestParam(@ModelAttribute Star star) {

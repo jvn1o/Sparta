@@ -1,1 +1,2 @@
-rootProject.name = 'memo'
+rootProject.name = 'Sparta'
+include 'memo'

@@ -35,7 +35,10 @@ public class MemoService {
 
     public List<MemoResponseDto> getMemos() {
         // DB 조회
-        return memoRepository.findAll().stream().map(MemoResponseDto::new).toList();
+        return memoRepository.findAllByOrderByModifiedAtDesc()
+                .stream()
+                .map(MemoResponseDto::new)
+                .toList();
     }
 
     // 변경감지 - Persistence Context 에 담겨야 변경감지 가능. 즉 Transactional 조건 걸어줘야 함

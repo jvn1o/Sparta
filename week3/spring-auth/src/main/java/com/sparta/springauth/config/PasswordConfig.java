@@ -1,4 +1,4 @@
-package com.sparta.sprignauth.config;
+package com.sparta.springauth.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

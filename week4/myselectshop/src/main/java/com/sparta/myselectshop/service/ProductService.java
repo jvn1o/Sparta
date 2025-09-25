@@ -48,6 +48,8 @@ public class ProductService {
         return new ProductResponseDto(product);
     }
 
+    // 지연 로딩 설정을 위해 @Transactional, 왜냐하면 항상 필요한
+    @Transactional(readOnly = true) // 성능 향상을 위해 readOnly true
     public Page<ProductResponseDto> getProducts(User user,
                                                 int page,
                                                 int size,

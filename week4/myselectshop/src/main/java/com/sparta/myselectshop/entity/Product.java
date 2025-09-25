@@ -42,6 +42,7 @@ public class Product extends Timestamped {
     @JoinColumn(name = "user_id", nullable = false) // 무조건 user_id 가 필요하다. nullable 허용 x
     private User user;
 
+    // 기본 설정인 "지연 로딩"인 상태
     @OneToMany(mappedBy = "product")
     private List<ProductFolder> productFolderList = new ArrayList<>();
 

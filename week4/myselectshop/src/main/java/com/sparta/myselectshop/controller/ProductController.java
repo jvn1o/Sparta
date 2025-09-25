@@ -19,6 +19,11 @@ public class ProductController {
 
     private final ProductService productService;
 
+    @GetMapping("/admin/products")
+    public List<ProductResponseDto> getAllProducts() {
+        return productService.getAllProducts();
+    }
+
     @PostMapping("/products")
     public ProductResponseDto createProduct(@RequestBody ProductRequestDto requestDto, @AuthenticationPrincipal UserDetailsImpl userDetails) {
         return productService.createProduct(requestDto, userDetails.getUser());
@@ -41,8 +46,12 @@ public class ProductController {
         return productService.getProducts(userDetails.getUser(),  page-1, size, sortBy, isAsc);
     }
 
-    @GetMapping("/admin/products")
-    public List<ProductResponseDto> getAllProducts() {
-        return productService.getAllProducts();
+    @PostMapping("/products/{productId}/folder")
+    public void addFolder(
+            @PathVariable Long productId,
+            @RequestParam Long folderId,
+            @AuthenticationPrincipal UserDetailsImpl userDetails
+    ) {
+        productService.addFolder(productId, folderId, userDetails.getUser());
     }
 }

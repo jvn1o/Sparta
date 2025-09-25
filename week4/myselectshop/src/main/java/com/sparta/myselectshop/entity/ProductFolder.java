@@ -9,7 +9,7 @@ import lombok.Setter;
 @Getter
 @Setter
 @NoArgsConstructor
-@Table(name = "product_folder")
+@Table(name = "product_folder") // 중간 테이블
 public class ProductFolder {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
